@@ -27,7 +27,7 @@ foreach ($data as $item) {
     $weather_data[] = [
         'latitude' => $latitude,
         'longitude' => $longitude,
-        'temperature' => $temperature,
+        'temperature_2m' => $temperature,
         'precipitation' => $precipitation,
         'cloud_cover' => $cloud_cover
     ];
