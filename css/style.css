@@ -1,22 +1,22 @@
 .button1 {
-    width: 10mm;
-    height: 10mm;
+    width: 80mm;
+    height: 80mm;
     background-image: url(links/wmo_1.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .button2 {
-    width: 10mm;
-    height: 10mm;
+    width: 80mm;
+    height: 80mm;
     background-image: url(links/wmo_2.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .button3 {
-    width: 10mm;
-    height: 10mm;
+    width: 80mm;
+    height: 80mm;
     background-image: url(links/wmo_3.png);
     background-size: cover;
     background-repeat: no-repeat;
