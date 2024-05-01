@@ -23,13 +23,15 @@ foreach ($data as $item) {
     $temperature = $item['current']['temperature_2m'];
     $precipitation = $item['current']['precipitation'];
     $cloud_cover = $item['current']['cloud_cover'];
+    $weather_code = $item['current']['weather_code'];
 
     $weather_data[] = [
         'latitude' => $latitude,
         'longitude' => $longitude,
         'temperature_2m' => $temperature,
         'precipitation' => $precipitation,
-        'cloud_cover' => $cloud_cover
+        'cloud_cover' => $cloud_cover,
+        'weather_code' => $weather_code
     ];
 }
 
