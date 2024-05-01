@@ -1,4 +1,4 @@
-button 1 {
+.button1 {
     width: 10mm;
     height: 10mm;
     background-image: url(links/wmo_1.png);
@@ -6,7 +6,7 @@ button 1 {
     background-repeat: no-repeat;
 }
 
-button 2 {
+.button2 {
     width: 10mm;
     height: 10mm;
     background-image: url(links/wmo_2.png);
@@ -14,7 +14,7 @@ button 2 {
     background-repeat: no-repeat;
 }
 
-button 3 {
+.button3 {
     width: 10mm;
     height: 10mm;
     background-image: url(links/wmo_3.png);
