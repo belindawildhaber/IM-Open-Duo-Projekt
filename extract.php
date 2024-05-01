@@ -2,7 +2,7 @@
 
 echo "Hallo tut daaaas?";
 
-$url = "https://api.open-meteo.com/v1/forecast?latitude=46.8499,46.9481&longitude=9.5329,7.4474&current=temperature_2m,precipitation,cloud_cover&timezone=Europe%2FBerlin&forecast_days=1";
+$url = "https://api.open-meteo.com/v1/forecast?latitude=46.9481,46.8499,47.3667&longitude=7.4474,9.5329,8.55&current=temperature_2m,precipitation,weather_code,cloud_cover&timezone=Europe%2FBerlin";
 
 $ch = curl_init($url);
 

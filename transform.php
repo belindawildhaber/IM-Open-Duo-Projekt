@@ -10,7 +10,8 @@ include 'extract.php';
 // make map with lat / lon to location
 $locations = [
     '46.84,9.52' => 'Chur',
-    '46.94,7.44' => 'Bern'
+    '46.94,7.44' => 'Bern',
+    '47.36,8.559999' => 'Zürich',
 ];
 
 // new function weather_condition
