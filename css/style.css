@@ -109,6 +109,11 @@ div {
     margin-bottom: 100px;
 }
 
+.box-link {
+    text-decoration: none; /* Entferne die Unterstreichung */
+    color: inherit; /* Verwende die Standardtextfarbe */
+}
+
 /*Icons Wetteranzeige*/
 .icon1:hover {
     transform: scale(0.5);
