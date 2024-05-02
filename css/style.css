@@ -91,6 +91,7 @@ div {
     background-image: url(links/wmo_1.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: transparent; /* remove background color - funktioniert aber nicht grrrrrrrrr*/
 }
 
 .button2 {
