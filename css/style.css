@@ -6,7 +6,7 @@
     --box-blue: #1c1c2c; /*für Box im Hintergrund*/
     --header-blue: #37466f; /*für Header und Footer*/
     --light-blue: #9eb1e4; /*für Grad Zahl und Titelschrift*/
-    --whithe: #FFFFFF; /*für Standort und Text unter dem Titel*/
+    --white: #FFFFFF; /*für Standort und Text unter dem Titel*/
 }
 
 header {
@@ -35,7 +35,7 @@ body {
     font-size: 20px;
     /*font-weight: 400;*/
     font-style: regular;
-    color: var(--whithe);
+    color: var(--white);
 }
 
 .text2 {
@@ -61,7 +61,7 @@ body {
     font-size: 36px;
     /* font-weight: 400; bestimmt die dicke der Schrift */
     font-style: normal;
-    color: var(--whithe);
+    color: var(--white);
     line-height: 1;
 }
 
@@ -104,12 +104,16 @@ div {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: var(--whithe);
+    color: var(--white);
     margin-top: 100px;
     margin-bottom: 100px;
-  }
+}
 
 /*Icons Wetteranzeige*/
+.icon1:hover {
+    transform: scale(0.5);
+    transition: transform 0.3s ease;
+}
 .icon1 {
     width: 80mm;
     height: 80mm;
@@ -127,6 +131,10 @@ div {
     background-repeat: no-repeat;
     margin-top: -130px;
 }
+.icon2:hover {
+    transform: scale(0.5);
+    transition: transform 0.3s ease;
+}
 
 .icon3{
     width: 80mm;
@@ -135,6 +143,10 @@ div {
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: -130px;
+}
+.icon3:hover {
+    transform: scale(0.5);
+    transition: transform 0.3s ease;
 }
 
 footer {
