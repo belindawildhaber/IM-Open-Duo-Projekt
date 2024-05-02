@@ -2,9 +2,14 @@ header {
     width: 100%;
 }
 
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
 .menuline {
     width: 100%;
-    background-color: var(blue);
+    background-color: red;
     padding: 5px 5px 5px 10px;
     box-sizing: border-box;
 }
@@ -31,4 +36,13 @@ header {
     background-image: url(links/wmo_3.png);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+footer {
+    background-color: var(--dark-blue);
+    height: 12vh;
+    min-height: 120px;
+    text-align: center;
+    padding: 15px 10px 10px 10px;
+    bottom: 0;
 }
