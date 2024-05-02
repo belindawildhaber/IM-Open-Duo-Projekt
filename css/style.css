@@ -66,6 +66,22 @@ div {
     max-width: 700px;
 }
 
+.gradanzeige {
+    font-family: "Alatsi", sans-serif;
+    font-size: 96px;
+    /* font-weight: 400; bestimmt die dicke der Schrift */
+    font-style: normal;
+    color: var(--light-blue);
+}
+
+.ortanzeige {
+    font-family: "Alatsi", sans-serif;
+    font-size: 48px;
+    /* font-weight: 400; bestimmt die dicke der Schrift */
+    font-style: normal;
+    color: var(--whithe);
+}
+
 /*Anzeige Wetter, Temperatur, Standort*/
 .wetteranzeige {
     display: grid;
