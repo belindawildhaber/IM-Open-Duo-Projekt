@@ -26,6 +26,8 @@ h1 {
 
 body {
     background-color: var(--background-blue);
+    margin: 0;
+    padding: 0;
 }
 
 .text1 {
