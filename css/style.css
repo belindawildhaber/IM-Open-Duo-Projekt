@@ -46,12 +46,14 @@ body {
     color: var(--black);
 }
 
-.gradanzeige {
+.gradanzeige p {
     font-family: "Alatsi", sans-serif;
     font-size: 96px;
     /* font-weight: 400; bestimmt die dicke der Schrift */
     font-style: normal;
     color: var(--light-blue);
+    margin: 0;
+    padding: 0;
 }
 
 .ortanzeige {
