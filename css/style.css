@@ -76,6 +76,10 @@ div {
     padding: 5px 5px 5px 10px;
     box-sizing: border-box;
 }
+.menuicon:hover {
+    transform: scale(0.5);
+    transition: transform 0.3s ease;
+}
 
 .hero {
     background-color: var(--gray-blue);
