@@ -89,37 +89,33 @@ div {
 
 /*Icons Wetteranzeige*/
 
-.button1, .button2, .button3 { /* Funkioniert aber auch nicht */
-    width: 100px; /* Breite des Buttons anpassen */
-    height: 100px; /* Höhe des Buttons anpassen */
-    border: none; /* Rahmen entfernen */
-    background: none; /* Hintergrund entfernen */
-  }
 
-.button1 {
+
+.icon1 {
     width: 60mm;
     height: 60mm;
     background-image: url(links/wmo_1.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: transparent; /* remove background color - funktioniert aber nicht grrrrrrrrr*/
     margin-top: -130px;
 }
 
-.button2 {
+.icon2 {
     width: 60mm;
     height: 60mm;
     background-image: url(links/wmo_2.png);
     background-size: cover;
     background-repeat: no-repeat;
+    margin-top: -130px;
 }
 
-.button3 {
+.icon3{
     width: 60mm;
     height: 60mm;
     background-image: url(links/wmo_3.png);
     background-size: cover;
     background-repeat: no-repeat;
+    margin-top: -130px;
 }
 
 footer {
