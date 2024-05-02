@@ -7,11 +7,31 @@ div {
     unicode-bidi: isolate;
 }
 
+:root {
+    --dark-blue: #283844;
+    --light-blue: #C1D1DD;
+    --gray-blue: #E0E8EE;
+    --light-gray-blue: #F0F4F7;
+    --light-green: #75CD72;
+    --light-red: #FF6961;
+}
+
 .menuline {
     width: 100%;
-    background-color: red;
+    background-color: var(--dark-blue);
     padding: 5px 5px 5px 10px;
     box-sizing: border-box;
+}
+
+.hero {
+    background-color: var(--gray-blue);
+    padding-top: 4vh;
+    text-align: center;
+}
+
+.herotext {
+    margin: auto;
+    max-width: 700px;
 }
 
 .button1 {
