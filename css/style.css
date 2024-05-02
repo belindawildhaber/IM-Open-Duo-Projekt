@@ -1,15 +1,38 @@
 /*Farbcodebestimmung*/
 :root {
-    --dark-blue: #283844;
-    --light-blue: #C1D1DD;
-    --gray-blue: #E0E8EE;
-    --light-gray-blue: #F0F4F7;
-    --light-green: #75CD72;
-    --light-red: #FF6961;
+    --black: #000000; /*für Schrift im Footer*/
+    --dark-gray: #372e2e; /*weiss nicht für was, wird in Figma aufgelistet*/
+    --background-blue: #11111b; /*für Hintergrund*/
+    --box-blue: #1c1c2c; /*für Box im Hintergrund*/
+    --header-blue: #37466f; /*für Header und Footer*/
+    --light-blue: #9eb1e4; /*für Grad Zahl und Titelschrift*/
+    --whithe: #FFFFFF; /*für Standort und Text unter dem Titel*/
 }
 
 header {
     width: 100%;
+    background-color: var(--header-blue);
+}
+
+h1 {
+    font-family: "Alatsi", sans-serif;
+    font-size: 64px;
+    /* font-weight: 400; bestimmt die dicke der Schrift */
+    font-style: normal;
+    color: var(--light-blue);
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: var(--background-blue);
+}
+
+p {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    /*font-weight: 400;*/
+    font-style: regular;
+    color: var(--whithe);
 }
 
 div {
@@ -80,7 +103,7 @@ div {
 }
 
 footer {
-    background-color: var(--dark-blue);
+    background-color: var(--header-blue);
     height: 12vh;
     min-height: 120px;
     text-align: center;
