@@ -27,12 +27,20 @@ body {
     background-color: var(--background-blue);
 }
 
-p {
+.text1 {
     font-family: "Inter", sans-serif;
     font-size: 20px;
     /*font-weight: 400;*/
     font-style: regular;
     color: var(--whithe);
+}
+
+.text2 {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    /*font-weight: 400;*/
+    font-style: regular;
+    color: var(--black);
 }
 
 div {
