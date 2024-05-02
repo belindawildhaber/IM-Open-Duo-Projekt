@@ -75,13 +75,13 @@ div {
 }
 
 .box {
-    background: var (--box-blue);
+    background: var(--box-blue);
     border-radius: 14px;
-    border: 1px solid #555;
+    border: 1px solid var(--box-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #AAA;
+    color: var(--whithe);
   }
 
 /*Icons Wetteranzeige*/
