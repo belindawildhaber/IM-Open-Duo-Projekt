@@ -1,12 +1,4 @@
-header {
-    width: 100%;
-}
-
-div {
-    display: block;
-    unicode-bidi: isolate;
-}
-
+/*Farbcodebestimmung*/
 :root {
     --dark-blue: #283844;
     --light-blue: #C1D1DD;
@@ -14,6 +6,15 @@ div {
     --light-gray-blue: #F0F4F7;
     --light-green: #75CD72;
     --light-red: #FF6961;
+}
+
+header {
+    width: 100%;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
 }
 
 .menuline {
@@ -34,25 +35,43 @@ div {
     max-width: 700px;
 }
 
+/*Anzeige Wetter, Temperatur, Standort*/
+.wetteranzeige {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-gap: 20px;
+}
+
+.box {
+    background: #444;
+    border-radius: 14px;
+    border: 1px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #AAA;
+  }
+
+/*Icons Wetteranzeige*/
 .button1 {
-    width: 80mm;
-    height: 80mm;
+    width: 60mm;
+    height: 60mm;
     background-image: url(links/wmo_1.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .button2 {
-    width: 80mm;
-    height: 80mm;
+    width: 60mm;
+    height: 60mm;
     background-image: url(links/wmo_2.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .button3 {
-    width: 80mm;
-    height: 80mm;
+    width: 60mm;
+    height: 60mm;
     background-image: url(links/wmo_3.png);
     background-size: cover;
     background-repeat: no-repeat;
