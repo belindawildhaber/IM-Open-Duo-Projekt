@@ -9,13 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+
+    <script src="./library/chart.umd.js"></script>
+    <script src="./library/moment.js"></script>
+    <script src="./library/chart-adapter-moment.min.js"></script>
+
 </head>
 
 <body>
     <header>
         <div classs="menuline">
             <a href="index.html">
-            <img src="links/wmo_3.png" class="menuicon" alt="Logo von der Website" width="60px" style="margin-left: 10px;">
+            <img src="./links/wmo_3.png" class="menuicon" alt="Logo von der Website" width="60px" style="margin-left: 10px;">
             </a>
         </div>
     </header>
@@ -26,6 +31,8 @@
             <p class="text1">Klick uf dini Stadt und erfahr meh über de Temperaturverlauf
                 und de hüttigi Niederschlag vor Ort.</p>
         </div>
+
+    <canvas id="temperatureChart"></canvas>
         
     <footer>
         <p class="text2">As FHGR Projekt fur Dshamilja Camenisch und dr Belinda Wildhaber
@@ -33,6 +40,8 @@
             powerd by open-meteo.ch
         </p>
     </footer>
+
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>

@@ -36,17 +36,6 @@ $wmoCodes = [
     '86' => 'schneefall'
 ];
 
-// new function weather_condition      ------- brauchen wir eigentlich nicht mehr, da wir die WMO-Codes haben
- function weather_condition($precipitation, $cloud_cover) {
-    if ($cloud_cover <= 80 && $precipitation == 0) {
-        return 'sunny';
-    } elseif ($cloud_cover > 80 && $precipitation < 5) {
-       return 'cloudy';
-    } elseif ($precipitation >= 5) {
-        return 'rainy';
-    }
- }
-
 // transfprm data
 foreach ($weather_data as $index => $item) {
 
@@ -66,12 +55,10 @@ foreach ($weather_data as $index => $item) {
     unset($weather_data[$index]['latitude']);
     unset($weather_data[$index]['longitude']);
 
-    // add weather condition
-    $weather_data[$index]['condition'] = weather_condition($item['precipitation'], $item['cloud_cover']);
-
-
 }
 
+/* echo "<pre>";
 print_r($weather_data);
+echo "</pre>"; */
 
 ?>
