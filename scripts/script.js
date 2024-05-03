@@ -48,6 +48,7 @@ async function main(){
                 yAxisID: 'precipitation'
             }]
         },
+        
         options: {
             scales: {
                 temperature: {
