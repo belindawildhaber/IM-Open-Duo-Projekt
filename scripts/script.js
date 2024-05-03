@@ -48,25 +48,37 @@ async function main(){
                 x: {
                     type: 'time',
                     time: {
-                        unit: 'day',
-                        displayFormat: {
-                            day: 'DD.MM HH:M'
+                        unit: 'hour',
+                        displayFormats: {
+                            hour: 'HH:mm'
                         }
                     },
-                    tick: {
-                        source: 'labels'
+                    ticks: {
+                        source: 'labels',
+                        maxRotation: 45,
+                        minRotation: 45
                     }
                 },
                 y: {
                     beginAtZero: true,
                     title: {
                         display: true,
-                        text: "Temperatur"
+                        text: "Temperatur",
+                        color: 'rgba(251,204,47)'
+                    }
+                },
+                y1: {
+                    position: 'right',
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: "Niederschlag",
+                        color: 'rgba(158,177,228)'
                     }
                 }
             }
         }
-    }); 
+    });
     
 }
 
