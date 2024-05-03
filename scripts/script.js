@@ -13,7 +13,7 @@ async function main(){
     
     const date = data.dates;
     const temp_chur = data.Chur.temperature;
-    const ns_chur = data.Chur.precipitation;
+    const ns_chur = data.Chur.precipitation.map(i => i+3);
 
     console.log(date);
     console.log(temp_chur);
@@ -35,45 +35,38 @@ async function main(){
                 label: 'Temperatur Chur',
                 data: temp_chur,
                 borderColor: 'rgba(251,204,47)',
-                borderWidth: 1,
-                fill: false,
-                yAxisID: 'temperature'
             },
             {
                 label: 'Niederschlag Chur',
                 data: ns_chur,
-                borderColor: 'rgba(158,177,228)',
-                borderWidth: 1,
-                fill: false,
-                yAxisID: 'precipitation'
+                borderColor: 'rgba(158,177,228)'
             }]
         },
         
         options: {
             scales: {
-                temperature: {
-                    position: 'left',
-                    beginAtZero: false,
-                    min: Math.floor(adjustedMinTemp), // Round down the lowest value
-                    max: Math.ceil(adjustedMaxTemp), // Round up the highest value
-                    stepSize: 1, // Show only full rounded degrees
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Temperature (°C)'
+                x: {
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        displayFormat: {
+                            day: 'DD.MM HH:M'
+                        }
+                    },
+                    tick: {
+                        source: 'labels'
                     }
                 },
-                precipitation: {
-                    position: 'right',
+                y: {
                     beginAtZero: true,
-                    suggestedMax: 14, // Set max value to 14mm
-                    scaleLabel: {
+                    title: {
                         display: true,
-                        labelString: 'Niederschlag (mm)'
+                        text: "Temperatur"
                     }
                 }
             }
         }
-    });
+    }); 
     
 }
 
