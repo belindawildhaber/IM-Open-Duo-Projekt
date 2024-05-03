@@ -12,10 +12,10 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Check if hourly parameter is set
-    if(isset($_GET['hourly']) && $_GET['hourly'] == 'true') {
-        $query = "SELECT HOUR(created) as hour, AVG(temperature) as avg_temperature, AVG(precipitation) as avg_precipitation, city FROM weather GROUP BY HOUR(created), city";
+    if(isset($_GET['hourly'])) {
+        $query = "SELECT DATE(created) as date, HOUR(created) as hour, AVG(temperature) as avg_temperature, AVG(precipitation) as avg_precipitation, city FROM weather GROUP BY DATE(created), HOUR(created), city;";
     } else {
-        $query = "SELECT * FROM weather";
+        $query = "SELECT * FROM weather ORDER BY created DESC;";
     }
 
     $statement = $pdo->prepare($query);
@@ -26,12 +26,22 @@ try {
     $tempcount = 0;
 
     foreach($data as $row){
-        $hour = $row['hour'];
-        $temperature = (float)$row['avg_temperature'];
-        $city = $row['city'];
-        $precipitation = (float)$row['avg_precipitation'];
+        if(isset($_GET['hourly'])) {
+            $hour = $row['hour'];
+            $temperature = (float)$row['avg_temperature'];
+            $city = $row['city'];
+            $precipitation = (float)$row['avg_precipitation'];
+    
+            $formattedDate = date('Y-m-d H:00:00', strtotime("today +{$hour} hours"));
+        } else {
+            $date = $row['created'];
+            $temperature = (float)$row['temperature'];
+            $city = $row['city'];
+            $precipitation = (float)$row['precipitation'];
 
-        $formattedDate = date('Y-m-d H:00:00', strtotime("today +{$hour} hours"));
+            $formattedDate = date('Y-m-d H:i:00', strtotime($date));
+        }
+
         
         if (!in_array($formattedDate, $dates)) {
             $dates[] = $formattedDate;
