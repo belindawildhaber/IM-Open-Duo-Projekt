@@ -34,7 +34,7 @@ async function main(){
             datasets: [{
                 label: 'Temperatur Chur',
                 data: temp_chur,
-                borderColor: 'rgba(255, 99, 132, 1)',
+                borderColor: 'rgba(251,204,47)',
                 borderWidth: 1,
                 fill: false,
                 yAxisID: 'temperature'
@@ -42,7 +42,7 @@ async function main(){
             {
                 label: 'Niederschlag Chur',
                 data: ns_chur,
-                borderColor: 'rgba(54, 162, 235, 1)',
+                borderColor: 'rgba(158,177,228)',
                 borderWidth: 1,
                 fill: false,
                 yAxisID: 'precipitation'
