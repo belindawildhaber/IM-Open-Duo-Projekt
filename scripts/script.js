@@ -10,7 +10,6 @@ async function fetchData() {
 
 async function main(){
     const data = await fetchData();
-    console.log(data)
     const date = data.dates;
     const temp_chur = data.Chur.temperature;
     const ns_chur = data.Chur.precipitation;

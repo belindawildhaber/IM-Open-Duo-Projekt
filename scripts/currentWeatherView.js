@@ -1,5 +1,9 @@
-const result = fetchWeatherData().then( data => {
-    console.log(data);}
+fetchWeatherData().then( data => {
+    console.log(data);
+    let gradChur = document.getElementById('temperatureChur');
+    gradChur.textContent = data[0].temperature;
+}
+    
 );
 
 
