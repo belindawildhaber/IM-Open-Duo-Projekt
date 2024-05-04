@@ -41,8 +41,7 @@ function getObjectByCity(data, city){
 async function fetchWeatherData(){
     try{
         const response = await fetch('https://332474-3.web.fhgr.ch/endpointGetCurrentWeather.php');
-        const data = await response.json();
-        return data;
+        return await response.json();
     } catch(error) {
         console.log(error);
     }

@@ -1,14 +1,19 @@
+function getCityFromUrl(){
+    let urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('city');
+}   
+
 async function fetchData() {
     try{
         const response = await fetch('https://332474-3.web.fhgr.ch/endpointgetweather.php?hourly');
-        const data = await response.json();
-        return data;
-    } catch(error) {
+        return await response.json();
+       } catch(error) {
         console.log(error);
     }
 }
 
 async function main(){
+    console.log(getCityFromUrl())
     const data = await fetchData();
     const date = data.dates;
     const temp_chur = data.Chur.temperature;
