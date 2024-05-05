@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+
+    <script src="./library/chart.umd.js"></script>
+    <script src="./library/moment.js"></script>
+    <script src="./library/chart-adapter-moment.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div classs="menuline">
+            <a href="index.html">
+            <img src="./links/wmo_3.png" class="menuicon" alt="Logo von der Website" width="60px" style="margin-left: 10px;">
+            </a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="herotext">
+            <h1 id="cityTitel">CHUR</h1>
+            <p id="cityText" class="text1">Das isch de Temperatur- und Niederschlagsverlauf fu Chur.</p>
+        </div>
+
+    <div class="chartbox">
+        <canvas id="temperatureChart" style="width:100%;max-width:1000px;max-height:500px;"></canvas>
+    </div>
+        
+    <footer>
+        <p class="text2">As FHGR Projekt fur Dshamilja Camenisch und dr Belinda Wildhaber
+            <br>
+            powered by open-meteo.ch
+        </p>
+    </footer>
+
+    <script src="./scripts/cityWeatherDetail.js"></script>
+</body>
+
+</html>
