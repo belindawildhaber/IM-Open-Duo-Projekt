@@ -1,4 +1,4 @@
-function getCityFromUrl(){
+/*function getCityFromUrl(){
     let urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('city');
 }   
@@ -23,12 +23,12 @@ async function main(){
     console.log(temp_chur);
     console.log(ns_chur);
 
-/*     const minTemp = Math.min(...temp_chur); */
+     const minTemp = Math.min(...temp_chur); 
     const maxTemp = Math.max(...temp_chur);
     const maxNs = Math.max(...ns_chur);
 
     // Adjust the lowest and highest temperature values
-/*     const adjustedMinTemp = minTemp - 3; */
+     const adjustedMinTemp = minTemp - 3; 
     const adjustedMaxTemp = Math.floor(maxTemp + 2);
     const adjustedMaxNS = Math.floor(maxNs + 2);
 
@@ -106,3 +106,4 @@ async function main(){
 }
 
 main();
+*/

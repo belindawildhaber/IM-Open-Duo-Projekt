@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once 'config.php';
 
 try {
@@ -78,5 +78,5 @@ try {
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
-
+*/
 ?>

@@ -2,20 +2,37 @@ async function main(){
     let city = getCityFromUrl();
     setTextToCurrentyCity(city);
     
-    const data = await fetchData();
-    const date = data.dates;
-
-    let obj;
-
-    if(city == 'Chur'){
-        obj = data.Chur;
-    }else if(city == 'Bern'){
-        obj = data.Bern;
-    }else if(city == 'Züri'){
-        obj = data.Zurich;        
+    if(city == "Züri"){
+        city = "Zürich";
     }
-   
-    configChart(obj.temperature, obj.precipitation, city, date.sort()); 
+
+    const data = await fetchData();
+    let resultArray = [];
+    for (const obj of data) {
+        if(obj.city == city){
+            resultArray.push(obj);
+        }   
+    }
+    
+    const hourlyData = groupByHour(resultArray);
+    hourlyData.sort((a, b) => new Date(a.created) - new Date(b.created));
+    let temp = [];
+    let date = [];
+    let ns = [];
+    hourlyData.forEach(element => { temp.push(element.temperature); });
+    hourlyData.forEach(element => { date.push(getRoundedHour(element.created)); });
+    hourlyData.forEach(element => { ns.push(element.precipitation); });
+  
+    configChart(temp, ns, city, date); 
+}
+
+async function fetchData(){
+    try{
+        const response = await fetch('https://332474-3.web.fhgr.ch/endpointGet24HourWeather.php');
+        return await response.json();
+    } catch(error) { 
+        console.log(error);
+    }
 }
 
 function configChart(temp, ns, city, date){
@@ -102,18 +119,34 @@ function getCityFromUrl(){
     return urlParams.get('city');
 }   
 
-async function fetchData() {
-    try{
-        const response = await fetch('https://332474-3.web.fhgr.ch/endpointgetweather.php?hourly');
-        return await response.json();
-       } catch(error) {
-        console.log(error);
-    }
-}
-
 function setTextToCurrentyCity(city){
     document.getElementById('cityTitel').textContent = city.toUpperCase();
     document.getElementById('cityText').textContent = "Das isch de Temperatur- und Niederschlagsverlauf fu " + city + "."
 }
 
+function groupByHour(weatherData) {
+    const groupedData = {};
+    
+    weatherData.forEach(data => {
+      const date = new Date(data.created);
+      const hour = date.getHours();
+      
+      if (!groupedData[hour]) {
+        groupedData[hour] = data;
+      } else {
+        const existingDate = new Date(groupedData[hour].created);
+        if (date > existingDate) {
+          groupedData[hour] = data;
+        }
+      }
+    });
+    
+    return Object.values(groupedData);
+  }
+  
+function getRoundedHour(time){
+    const date = new Date(time);
+    const roundedHour = new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(),0,0);
+    return roundedHour.toISOString();
+}
 main();
