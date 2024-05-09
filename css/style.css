@@ -173,3 +173,19 @@ footer {
     padding: 15px 10px 10px 10px;
     bottom: 0;
 }
+
+@media (max-width:1024px){
+    .wetteranzeige{
+        display: block !important;
+    }
+    .box-link{
+        width: 320px !important;
+        margin: auto !important;
+        display: block !important;
+        position: relative;
+        top: 50px !important;
+    }
+    .text1{
+        padding: 0px 30px !important;
+    }
+}
