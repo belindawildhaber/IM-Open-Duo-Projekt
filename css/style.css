@@ -176,16 +176,17 @@ footer {
 
 @media (max-width:1024px){
     .wetteranzeige{
-        display: block !important;
+        display: block;
     }
     .box-link{
-        width: 320px !important;
-        margin: auto !important;
-        display: block !important;
+        width: 320px;
+        margin: auto;
+        display: block;
         position: relative;
-        top: 50px !important;
+        top: 50px;
     }
     .text1{
-        padding: 0px 30px !important;
+        padding: 0px 30px;
     }
+    
 }
