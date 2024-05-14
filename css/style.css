@@ -120,10 +120,6 @@ div {
 }
 
 /*Icons Wetteranzeige*/
-.icon1:hover {
-    transform: scale(0.5);
-    transition: transform 0.3s ease;
-}
 .icon1 {
     width: 80mm;
     height: 80mm;
@@ -131,6 +127,10 @@ div {
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: -130px;
+}
+.icon1:hover {
+    transform: scale(0.5);
+    transition: transform 0.3s ease;
 }
 
 .icon2 {
