@@ -17,7 +17,7 @@ header {
 
 h1 {
     font-family: "Alatsi", sans-serif;
-    font-size: 50px;
+    font-size: 64px;
     /* font-weight: 400; bestimmt die dicke der Schrift */
     font-style: normal;
     color: var(--light-blue);
@@ -40,7 +40,7 @@ body {
 
 .text2 {
     font-family: "Inter", sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     /*font-weight: 400;*/
     font-style: regular;
     color: var(--black);
@@ -48,7 +48,7 @@ body {
 
 .gradanzeige p {
     font-family: "Alatsi", sans-serif;
-    font-size: 80px;
+    font-size: 96px;
     /* font-weight: 400; bestimmt die dicke der Schrift */
     font-style: normal;
     color: var(--light-blue);
@@ -58,7 +58,7 @@ body {
 
 .ortanzeige {
     font-family: "Alatsi", sans-serif;
-    font-size: 30px;
+    font-size: 36px;
     /* font-weight: 400; bestimmt die dicke der Schrift */
     font-style: normal;
     color: var(--white);
@@ -83,7 +83,7 @@ div {
 
 .hero {
     background-color: var(--gray-blue);
-    padding-top: 2vh;
+    padding-top: 4vh;
     text-align: center;
     min-height: 80%;
 }
@@ -111,7 +111,7 @@ div {
     flex-direction: column;
     color: var(--white);
     margin-top: 100px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 .box-link {
@@ -125,8 +125,8 @@ div {
     transition: transform 0.3s ease;
 }
 .icon1 {
-    width: 60mm;
-    height: 60mm;
+    width: 80mm;
+    height: 80mm;
     background-image: url(links/wmo_1.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -134,8 +134,8 @@ div {
 }
 
 .icon2 {
-    width: 60mm;
-    height: 60mm;
+    width: 80mm;
+    height: 80mm;
     background-image: url(links/wmo_2.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -147,8 +147,8 @@ div {
 }
 
 .icon3{
-    width: 60mm;
-    height: 60mm;
+    width: 80mm;
+    height: 80mm;
     background-image: url(links/wmo_3.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -163,22 +163,13 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 80px;
-    max-height: 60vh;
+    margin-bottom: 4vh;
 }
-
-/*
-.details {
-    position:fixed;
-    bottom: 0 !important;
-    width: 100%;
-
-}
-*/
 
 footer {
     background-color: var(--header-blue);
     text-align: center;
+    min-height: 120px;
     padding: 15px 10px 10px 10px;
     bottom: 0;
 }
