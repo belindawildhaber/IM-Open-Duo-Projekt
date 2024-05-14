@@ -40,7 +40,7 @@ $wmoCodes = [
 foreach ($weather_data as $index => $item) {
 
     // round temperature to integer
-    $weather_data[$index]['temperature_2m'] = round($item['temperature_2m'] * 2) / 2;
+    //$weather_data[$index]['temperature_2m'] = round($item['temperature_2m'] * 2) / 2;
 
     // convert lat / lon to location
     $coordinates = $item['latitude'] . ',' . $item['longitude'];

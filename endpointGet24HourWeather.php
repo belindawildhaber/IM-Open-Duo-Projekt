@@ -6,7 +6,7 @@ try {
     $pdo = new PDO($dsn, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "SELECT * FROM weather where created >= NOW() - INTERVAL 24 HOUR ORDER BY created DESC;";
+    $query = "SELECT * FROM weather /*where created >= NOW() - INTERVAL 24 HOUR*/ ORDER BY created DESC;";
     
     $statement = $pdo->prepare($query);
     $statement->execute();

@@ -6,7 +6,7 @@ try {
     $pdo = new PDO($dsn, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $query = "SELECT * FROM weather ORDER BY created DESC LIMIT 3;";
+    $query = "SELECT * FROM weather ORDER BY created DESC LIMIT 10;";
     
     $statement = $pdo->prepare($query);
     $statement->execute();
