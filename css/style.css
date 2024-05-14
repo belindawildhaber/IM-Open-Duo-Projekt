@@ -169,9 +169,18 @@ div {
 footer {
     background-color: var(--header-blue);
     text-align: center;
-    min-height: 120px;
-    padding: 15px 10px 10px 10px;
+    padding: 2% 0%;
     bottom: 0;
+}
+
+.detailfooter {
+    /* position: absolute; */
+    left: 0;
+    bottom: 0;
+    background-color: var(--header-blue);
+    text-align: center;
+    width: 100%;
+    padding: 2% 0%
 }
 
 @media (max-width:1024px){
