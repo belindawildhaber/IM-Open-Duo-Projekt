@@ -158,19 +158,30 @@ div {
     transform: scale(0.5);
     transition: transform 0.3s ease;
 }
+.buttons {
+    margin: 3% 3%;
+}
+.timeBtn {
+    background-color: var(--light-blue);
+    padding: 6px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: inline-block;
+    border: none; /* Remove any border */
+    outline: none; /* Remove any outline */
+    box-shadow: none; /* Remove any box-shadow */
+}
+
+.timeBtn:focus {
+    background-color: var(--white); /* Change the background color for the focused button */
+}
 
 .chartbox {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 4vh;
-}
-
-footer {
-    background-color: var(--header-blue);
-    text-align: center;
-    padding: 2% 0%;
-    bottom: 0;
 }
 
 .detailfooter {
@@ -184,18 +195,28 @@ footer {
 }
 
 @media (max-width:1024px){
-    .wetteranzeige{
-        display: block;
+ 
+    .wetteranzeige {
+        display: flex;
+        overflow-x: auto;
+        grid-gap: 20px;
+        scroll-snap-type: x mandatory;
     }
-    .box-link{
-        width: 320px;
-        margin: auto;
-        display: block;
-        position: relative;
-        top: 50px;
+    
+    .box {
+        flex: 1 0 30%;
+        scroll-snap-align: center;
+
     }
+    
     .text1{
         padding: 0px 30px;
     }
 
+    .timeBtn {
+        display: block;
+        width: 50%; /* Set buttons to take 50% width for two columns */
+        margin-right: 0;
+    }
+    
 }
