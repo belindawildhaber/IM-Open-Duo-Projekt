@@ -158,8 +158,13 @@ div {
     transform: scale(0.5);
     transition: transform 0.3s ease;
 }
+
+/*Auswahl Buttons*/
 .buttons {
-    margin: 3% 3%;
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 40px;
 }
 .timeBtn {
     background-color: var(--light-blue);
@@ -177,6 +182,12 @@ div {
     background-color: var(--white); /* Change the background color for the focused button */
 }
 
+.timeBtn:hover {
+    background-color: var(--white);
+    filter: drop-shadow(3px 3px 5px #000000a0);
+}
+
+/*Diagramm*/
 .chartbox {
     display: flex;
     justify-content: center;
@@ -184,6 +195,7 @@ div {
     margin-bottom: 4vh;
 }
 
+/*Divfooter*/
 .detailfooter {
     /* position: absolute; */
     left: 0;
@@ -214,19 +226,15 @@ div {
     }
 
     .text2{
-        font-size: 12px;
+        font-size: 15px;
+        padding: 2% 2%;
     }
 
-    .buttons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 
     .timeBtn {
-        flex: 1 0 45%; /* Adjust width for two columns */
-        margin: 0.5%; /* Add some margin between buttons */
+        font-size: 14px;
+        padding: 4px 15px;
+        margin-right: 5px; /* Adjust margin right for smaller screens */
     }
-
 
 }
