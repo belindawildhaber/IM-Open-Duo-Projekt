@@ -154,6 +154,7 @@ div {
     background-repeat: no-repeat;
     margin-top: -130px;
 }
+
 .icon3:hover {
     transform: scale(0.5) translateY(-5px); /* Adjust scale and translateY for smoother effect */
 }
