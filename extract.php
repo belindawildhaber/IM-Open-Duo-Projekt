@@ -6,7 +6,8 @@ $url = "https://api.open-meteo.com/v1/forecast?latitude=46.9481,46.8499,47.3667&
 
 $ch = curl_init($url);
 
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);Total precipitation (rain, showers, snow) sum of the preceding hour
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//Total precipitation (rain, showers, snow) sum of the preceding hour
 
 $output = curl_exec($ch);
 

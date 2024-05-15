@@ -15,66 +15,68 @@
     <header>
         <div class="menuline">
             <a href="index.html">
-            <img src="links/wmo_3.png" class="menuicon" alt="Logo von der Website" width="60px" style="margin-left: 10px;">
+                <img src="links/wmo_3.png" class="menuicon" alt="Logo von der Website" width="60px"
+                    style="margin-left: 10px;">
             </a>
         </div>
     </header>
-   
+
     <div class="hero">
         <div class="herotext">
             <h1>DIS MMP-WETTER</h1>
             <p class="text1">Klick uf dini Stadt und erfahr meh über de Temperaturverlauf
                 und de hüttigi Niederschlag vor Ort.</p>
         </div>
-  
+
         <div class="wetteranzeige">
+            <a href="detail.html?city=Bern" class="box-link">
+                <div class="box">
+                    <img src="links/wmo_1.png" id="iconBern" class="icon1">
+                    <div class="gradanzeige">
+                        <p id="temperatureBern"></p>
+                    </div>
+                    <div class="ortanzeige">
+                        <h2>BERN</h2>
+                    </div>
+                </div>
+            </a>
 
-        <a href="detail.html?city=Bern" class="box-link">
-             <div class="box">
-                <img src="links/wmo_1.png" id="iconBern" class="icon1">
-                <div class="gradanzeige">
-                    <p id="temperatureBern"></p>
+            <a href="detail.html?city=Chur" class="box-link">
+                <div class="box">
+                    <img src="links/wmo_2.png" id="iconChur" class="icon2">
+                    <div class="gradanzeige">
+                        <p id="temperatureChur"></p>
+                    </div>
+                    <div class="ortanzeige">
+                        <h2>CHUR</h2>
+                    </div>
                 </div>
-                <div class="ortanzeige">
-                    <h2>BERN</h2>
+            </a>
+
+            <a href="detail.html?city=Züri" class="box-link">
+                <div class="box">
+                    <img src="links/wmo_3.png" id="iconZuerich" class="icon3">
+                    <div class="gradanzeige">
+                        <p id="temperatureZuerich"></p>
+                    </div>
+                    <div class="ortanzeige">
+                        <h2>ZÜRI</h2>
+                    </div>
                 </div>
+            </a>
+
         </div>
-        </a>
 
-        <a href="detail.html?city=Chur" class="box-link">
-            <div class="box">
-                <img src="links/wmo_2.png" id="iconChur" class="icon2">
-                <div class="gradanzeige">
-                    <p id="temperatureChur"></p>
-                </div>
-                <div class="ortanzeige">
-                    <h2>CHUR</h2>
-                </div>
-            </div>
-        </a>
-
-        <a href="detail.html?city=Züri" class="box-link">
-            <div class="box">
-                <img src="links/wmo_3.png" id="iconZuerich" class="icon3">
-                <div class="gradanzeige">
-                    <p id="temperatureZuerich"></p>
-                </div>
-                <div class="ortanzeige">
-                    <h2>ZÜRI</h2>
-                </div>
-            </div>
-        </a>
-        </div>
     </div>
 
     <div class="detailfooter">
-            <p class="text2">As FHGR Projekt fur Dshamilja Camenisch und dr Belinda Wildhaber
-                <br>
-                powered by open-meteo.ch
-            </p>
+        <p class="text2">As FHGR Projekt fur Dshamilja Camenisch und dr Belinda Wildhaber
+            <br>
+            powered by open-meteo.ch
+        </p>
     </div>
 
-<body>
+    <body>
         <script src="./scripts/currentWeatherView.js"></script>
     </body>
 </body>

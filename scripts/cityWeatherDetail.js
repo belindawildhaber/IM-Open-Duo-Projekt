@@ -16,18 +16,11 @@ async function main() {
 
 function updateChart(resultArray, timeSet, city){
     const formattedData = groupByHours(resultArray, timeSet);
-    //hourlyData.sort((a, b) => new Date(a.created) - new Date(b.created));
-        //let temp = [];
-    //let date = [];
-    //let ns = [];
-    //hourlyData.forEach(element => { temp.push(element.temperature); });
-    //hourlyData.forEach(element => { date.push(getRoundedHour(element.created)); });
-    //hourlyData.forEach(element => { date.push(element.created); });
-    //hourlyData.forEach(element => { ns.push(element.precipitation); });
-
     chartTemperature.data.labels = formattedData.date;
     chartTemperature.data.datasets[0].data = formattedData.temp;
     chartTemperature.data.datasets[1].data = formattedData.ns;
+    chartTemperature.options.scales.y.max = Math.floor(Math.max(...formattedData.temp) + 2);
+    chartTemperature.options.scales.y1.max = Math.floor(Math.max(...formattedData.ns) + 2);
     chartTemperature.update();
 }
 
@@ -72,7 +65,6 @@ function configChart(temp, ns, city, date) {
                 yAxisID: 'y1'
             }]
         },
-
         options: {
             scales: {
                 x: {
@@ -136,27 +128,6 @@ function setTextToCurrentyCity(city) {
     document.getElementById('cityText').textContent = "Das isch de Temperatur- und Niederschlagsverlauf fu " + city + "."
 }
 
-
-function groupByHour(weatherData) {
-    const groupedData = {};
-
-    weatherData.forEach(data => {
-        const date = new Date(data.created);
-        const hour = date.getHours();
-
-        if (!groupedData[hour]) {
-            groupedData[hour] = data;
-        } else {
-            const existingDate = new Date(groupedData[hour].created);
-            if (date > existingDate) {
-                groupedData[hour] = data;
-            }
-        }
-    });
-
-    return Object.values(groupedData);
-}
-
 function groupByHours(weatherData, timeSet) {
     const now = new Date();
     const timeRanges = {
@@ -189,10 +160,8 @@ function groupByHours(weatherData, timeSet) {
     result.sort((a, b) => new Date(a.created) - new Date(b.created));
 
     result.forEach(element => { returnObj.temp.push(element.temperature); });
-    //hourlyData.forEach(element => { date.push(getRoundedHour(element.created)); });
-    result.forEach(element => { returnObj.date.push(element.created); });
+    result.forEach(element => { returnObj.date.push(getRoundedHour(element.created)); });
     result.forEach(element => { returnObj.ns.push(element.precipitation); });
-
     return returnObj;
 }
 
