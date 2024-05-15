@@ -69,7 +69,7 @@ div {
     display: block;
     unicode-bidi: isolate;
 }
-
+/*Header*/
 .menuline {
     width: 100%;
     background-color: var(--dark-blue);
@@ -77,10 +77,10 @@ div {
     box-sizing: border-box;
 }
 .menuicon:hover {
-    transform: scale(0.5);
-    transition: transform 0.3s ease;
+    transform: scale(0.5) translateY(-5px); /* Adjust scale and translateY for smoother effect */
 }
 
+/*Mittelteil*/
 .hero {
     background-color: var(--gray-blue);
     padding-top: 4vh;
@@ -128,9 +128,9 @@ div {
     background-repeat: no-repeat;
     margin-top: -130px;
 }
+
 .icon1:hover {
-    transform: scale(0.5);
-    transition: transform 0.3s ease;
+    transform: scale(0.5) translateY(-5px); /* Adjust scale and translateY for smoother effect */
 }
 
 .icon2 {
@@ -142,8 +142,7 @@ div {
     margin-top: -130px;
 }
 .icon2:hover {
-    transform: scale(0.5);
-    transition: transform 0.3s ease;
+    transform: scale(0.5) translateY(-5px); /* Adjust scale and translateY for smoother effect */
 }
 
 .icon3{
@@ -155,17 +154,17 @@ div {
     margin-top: -130px;
 }
 .icon3:hover {
-    transform: scale(0.5);
-    transition: transform 0.3s ease;
+    transform: scale(0.5) translateY(-5px); /* Adjust scale and translateY for smoother effect */
 }
 
-/*Auswahl Buttons*/
+/*Filterbuttons Chart */
 .buttons {
     width: fit-content;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 40px;
 }
+
 .timeBtn {
     background-color: var(--light-blue);
     padding: 6px 20px;
@@ -187,7 +186,7 @@ div {
     filter: drop-shadow(3px 3px 5px #000000a0);
 }
 
-/*Diagramm*/
+/*Chart*/
 .chartbox {
     display: flex;
     justify-content: center;
@@ -229,7 +228,6 @@ div {
         font-size: 15px;
         padding: 2% 2%;
     }
-
 
     .timeBtn {
         font-size: 14px;
