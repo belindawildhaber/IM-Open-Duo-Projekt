@@ -213,10 +213,20 @@ div {
         padding: 0px 30px;
     }
 
-    .timeBtn {
-        display: block;
-        width: 50%; /* Set buttons to take 50% width for two columns */
-        margin-right: 0;
+    .text2{
+        font-size: 12px;
     }
-    
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .timeBtn {
+        flex: 1 0 45%; /* Adjust width for two columns */
+        margin: 0.5%; /* Add some margin between buttons */
+    }
+
+
 }
