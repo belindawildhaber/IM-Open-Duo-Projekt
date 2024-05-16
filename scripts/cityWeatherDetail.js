@@ -3,8 +3,9 @@ let city = ""
 let chartTemperature;
 
 async function main() {
-    city = getCityFromUrl();
-    setTextToCurrentyCity(city);
+    city = new URLSearchParams(window.location.search).get('city');
+    document.getElementById('cityTitel').textContent = city.toUpperCase();
+    document.getElementById('cityText').textContent = "Das isch de Temperatur- und Niederschlagsverlauf fu " + city + "."
     city = (city === "Züri") ? "Zürich" : city;
 
     const data = await fetchData();
@@ -44,7 +45,6 @@ function chartButtons(){
         button.classList.add("timeBtn");
     })
 }
-
 
 async function fetchData() {
     try {
@@ -132,16 +132,6 @@ function configChart(temp, ns, city, date) {
     });
 }
 
-function getCityFromUrl() {
-    let urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('city');
-}
-
-function setTextToCurrentyCity(city) {
-    document.getElementById('cityTitel').textContent = city.toUpperCase();
-    document.getElementById('cityText').textContent = "Das isch de Temperatur- und Niederschlagsverlauf fu " + city + "."
-}
-
 function groupByHours(weatherData, timeSet) {
     const now = new Date();
     const timeRanges = {
@@ -164,7 +154,7 @@ function groupByHours(weatherData, timeSet) {
         }
     });
 
-    const result = [];
+    let result = [];
 
     for (const hour in groupedData) {
         result.push(...groupedData[hour]);
@@ -173,18 +163,37 @@ function groupByHours(weatherData, timeSet) {
     let returnObj = {temp: [], ns: [], date: []};
     result.sort((a, b) => new Date(a.created) - new Date(b.created));
 
+    console.log(result);
+    result = calculateAverages(result)
     result.forEach(element => { returnObj.temp.push(element.temperature); });
-    result.forEach(element => { returnObj.date.push(getRoundedHour(element.created)); });
-    //result.forEach(element => { console.log(getRoundedHour(element.created)); });
-    //result.forEach(element => { returnObj.date.push(element.created); });
+    result.forEach(element => { returnObj.date.push(element.created); });
     result.forEach(element => { returnObj.ns.push(element.precipitation); });
     return returnObj;
 }
 
-function getRoundedHour(time) {
-    const date = new Date(time);
-    const roundedHour = new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), 0, 0);
-    //console.log(date.toISOString());
-    return roundedHour.toISOString();
+function calculateAverages(data) {
+    const averages = {};
+
+    data.forEach(entry => {
+        const timestamp = new Date(entry.created);
+        const hour = timestamp.getUTCHours();
+        const key = new Date(timestamp.setUTCHours(hour, 0, 0, 0)).toISOString();
+
+        if (!averages[key]) {
+            averages[key] = { sumTemperature: 0, sumPrecipitation: 0, count: 0 };
+        }
+
+        averages[key].sumTemperature += parseFloat(entry.temperature);
+        averages[key].sumPrecipitation += parseFloat(entry.precipitation);
+        averages[key].count++;
+    });
+
+    for (const key in averages) {
+        const averageTemperature = averages[key].sumTemperature / averages[key].count;
+        const averagePrecipitation = averages[key].sumPrecipitation / averages[key].count;
+        averages[key] = { created: key, temperature: averageTemperature, precipitation: averagePrecipitation };
+    }
+
+    return Object.values(averages);
 }
-main();
+main()
