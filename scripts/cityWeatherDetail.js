@@ -24,13 +24,27 @@ function updateChart(resultArray, timeSet, city){
     chartTemperature.update();
 }
 
-
 const timeButtons = document.querySelectorAll('.timeBtn');
 timeButtons.forEach(button => {
+    if (button.value =="day"){
+        button.classList.remove("timeBtn");
+        button.classList.add("timeBtnActiv");
+    }
     button.addEventListener('click', async function () {
+        chartButtons()
+        button.classList.remove("timeBtn");
+        button.classList.add("timeBtnActiv");
         updateChart(resultArray, this.value, city)
     });
 });
+
+function chartButtons(){
+    timeButtons.forEach(button => {
+        button.classList.remove("timeBtnActiv");
+        button.classList.add("timeBtn");
+    })
+}
+
 
 async function fetchData() {
     try {
@@ -161,6 +175,8 @@ function groupByHours(weatherData, timeSet) {
 
     result.forEach(element => { returnObj.temp.push(element.temperature); });
     result.forEach(element => { returnObj.date.push(getRoundedHour(element.created)); });
+    //result.forEach(element => { console.log(getRoundedHour(element.created)); });
+    //result.forEach(element => { returnObj.date.push(element.created); });
     result.forEach(element => { returnObj.ns.push(element.precipitation); });
     return returnObj;
 }
@@ -168,6 +184,7 @@ function groupByHours(weatherData, timeSet) {
 function getRoundedHour(time) {
     const date = new Date(time);
     const roundedHour = new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), 0, 0);
+    //console.log(date.toISOString());
     return roundedHour.toISOString();
 }
 main();
