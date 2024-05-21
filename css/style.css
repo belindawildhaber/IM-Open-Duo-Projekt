@@ -222,16 +222,9 @@ div {
 @media (max-width:1024px){
  
     .wetteranzeige {
-        display: flex;
-        overflow-x: auto;
-        grid-gap: 20px;
-        scroll-snap-type: x mandatory;
-    }
+        grid-template-columns: 1fr; /* Change to a single column layout */
     
-    .box {
-        flex: 1 0 30%;
-        scroll-snap-align: center;
-
+        padding: 0 20px; /* Add padding to the sides */
     }
     
     .text1{
