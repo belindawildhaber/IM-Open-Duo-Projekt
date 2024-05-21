@@ -161,7 +161,7 @@ div {
 
 /*Filterbuttons Chart */
 .buttons {
-    width: fit-content;
+    width: 100%;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 40px;
@@ -177,6 +177,7 @@ div {
     border: none; /* Remove any border */
     outline: none; /* Remove any outline */
     box-shadow: none; /* Remove any box-shadow */
+    color: #000000;
 }
 
 .timeBtn:focus {
@@ -198,6 +199,7 @@ div {
     border: none; /* Remove any border */
     outline: none; /* Remove any outline */
     box-shadow: none; /* Remove any box-shadow */
+    color: #000000;
 }
 
 /*Chart*/
@@ -223,7 +225,6 @@ div {
  
     .wetteranzeige {
         grid-template-columns: 1fr; /* Change to a single column layout */
-    
         padding: 0 20px; /* Add padding to the sides */
     }
     
@@ -236,10 +237,19 @@ div {
         padding: 2% 2%;
     }
 
-    .timeBtn {
-        font-size: 14px;
-        padding: 4px 15px;
-        margin-right: 5px; /* Adjust margin right for smaller screens */
+    .buttons {
+        flex-direction: row; /* Ensure buttons are in a row */
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center; /* Center align the buttons */
+        color: #000000;
     }
 
+    .timeBtn, .timeBtnActiv {
+        font-size: 12px;
+        padding: 4px 10px; /* Adjust padding for smaller screens */
+        margin-right: 3px; /* Adjust margin right for smaller screens */
+        margin-left: 3px; /* Adjust margin left for smaller screens */
+        margin-bottom: 5px; /* Add margin bottom for spacing when wrapped */
+        color: #000000;
+    }
 }
